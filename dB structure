@@ -1,0 +1,18 @@
+// this is a code we use to create table structure for our database in dbdiagram app.
+
+Table users{
+  id integer[pk, increment]  //pk is primary key
+  username varchar
+}
+
+Table comments{
+  id integer[pk, increment]
+  contents varchar
+  user_id int[ref : > users.id]  // creating a foreign key. > means pointing
+  post_id int[ref : >posts.id]
+}
+
+Table posts{
+  id integer[pk, increment]
+  title varchar
+}
